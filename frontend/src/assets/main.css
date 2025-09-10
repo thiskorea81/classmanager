@@ -1,0 +1,320 @@
+/* 공통 스타일 */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+main {
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+h1, h2, h3 {
+  color: #2c3e50;
+}
+
+hr {
+  margin: 30px 0;
+  border: 0;
+  border-top: 1px solid #eee;
+}
+
+/* App.vue (전역 내비게이션) */
+header {
+  line-height: 1.5;
+  background-color: #f0f0f0;
+  padding: 10px 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+nav a {
+  display: inline-block;
+  padding: 0 1rem;
+  border-left: 1px solid var(--color-border);
+}
+
+nav a:first-of-type {
+  border: 0;
+}
+
+nav a.router-link-exact-active {
+  color: #42b883;
+}
+
+/* 페이지별 컨테이너 및 레이아웃 */
+.file-upload-container,
+.manual-input-container,
+.student-list-container,
+.todo-list-section,
+.manual-todo-section,
+.work-log-container {
+  margin-bottom: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.student-details-layout,
+.list-search-layout,
+.todo-list-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* 1000px 이상일 때 적용될 레이아웃 */
+@media (min-width: 1000px) {
+  .student-details-layout,
+  .list-search-layout {
+    flex-direction: row;
+  }
+  .info-section, .consultation-section {
+    flex-basis: 50%;
+  }
+  .search-section {
+    flex-basis: 30%;
+  }
+  .list-section {
+    flex-basis: 70%;
+  }
+}
+
+/* 컴포넌트 내부 스타일 */
+.guide-text {
+  font-size: 0.9em;
+  color: #666;
+  margin-top: 10px;
+}
+
+.form-group {
+  margin-bottom: 10px;
+}
+
+.form-group label {
+  display: inline-block;
+  width: 120px;
+}
+
+.form-group input,
+.manual-form input,
+.add-consultation-form textarea {
+  width: 200px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin: 10px 0;
+}
+
+/* 버튼 스타일 */
+.delete-all-btn,
+.delete-btn {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.delete-all-btn:hover,
+.delete-btn:hover {
+  background-color: #d32f2f;
+}
+
+.go-btn,
+.manual-form button,
+.add-consultation-form button,
+.log-actions button {
+  display: inline-block;
+  padding: 10px 15px;
+  background-color: #2c3e50;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.go-btn:hover,
+.manual-form button:hover,
+.add-consultation-form button:hover,
+.log-actions button:hover {
+  background-color: #3f526b;
+}
+
+/* 상담 카드 스타일 */
+.consultation-card-container {
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.consultation-list {
+  max-height: 300px;
+  overflow-y: auto;
+  margin-bottom: 20px;
+  padding: 0 10px;
+}
+
+.consultation-item {
+  background-color: white;
+  border: 1px solid #eee;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+}
+
+.consultation-date {
+  font-size: 0.9em;
+  color: #888;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+
+.consultation-content {
+  white-space: pre-wrap;
+}
+
+.no-consultation-message {
+  color: #888;
+  font-style: italic;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.add-consultation-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.add-consultation-form textarea {
+  width: 100%;
+  resize: vertical;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-family: inherit;
+}
+
+/* 업무일지 페이지 스타일 */
+.date-picker-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.log-editor textarea {
+  width: 100%;
+  min-height: 300px;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-family: inherit;
+}
+
+.log-actions {
+  margin-top: 15px;
+  text-align: right;
+}
+
+.log-actions .extract-btn {
+  background-color: #2c3e50;
+  color: white;
+  margin-right: 10px;
+}
+
+.log-actions .delete-btn {
+  background-color: #f44336;
+  color: white;
+}
+
+/* 할 일 목록 페이지 스타일 */
+.todo-list-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.todo-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.todo-item.completed {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.todo-content {
+  flex-grow: 1;
+  margin-left: 10px;
+}
+
+.todo-item .delete-btn {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.manual-todo-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.manual-form {
+  display: flex;
+  gap: 10px;
+}
+
+.manual-form input {
+  flex-grow: 1;
+}
+
+/* 요약 카드 스타일 */
+.summary-card {
+  background-color: #e8f5e9;
+  border-left: 5px solid #4caf50;
+  padding: 15px 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.summary-card h3 {
+  margin-top: 0;
+  color: #388e3c;
+}
+
+.summary-card p {
+  white-space: pre-wrap;
+  line-height: 1.6;
+}
+
+.loading-text {
+  font-style: italic;
+  color: #777;
+}
